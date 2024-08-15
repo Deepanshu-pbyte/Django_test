@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 import yt_dlp
 import os
 
-
+@csrf_exempt
 def youtube(request):
     print(request.method)
     if request.method == "POST":
