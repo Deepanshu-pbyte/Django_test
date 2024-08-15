@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.views.decorators.csrf import csrf_exempt
 from yt_downloader.views import youtube
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("django_app.urls")),
-    path("youtube/", youtube, name="youtube"),
+    path("youtube/", csrf_exempt(youtube), name="youtube"),
 ]
