@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-qmdgh(fe+&pi@u0w7cy*jo%kc9ocs+4q_d8+_&0xjs1hffr(3s
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = ["https://deepanshu-pbyte.github.io/Django_test/"]
 
 
 # Application definition
