@@ -11,7 +11,6 @@ def youtube(request):
         quality = request.POST.get("Quality")
         print("url = ", video_url)
         try:
-            output_path = r"C:\Users\HP\Downloads\%(title)s.%(ext)s"
             ydl_opts = {"format": quality, "outtmpl": output_path}
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info_dict = ydl.extract_info(video_url, download=True)
@@ -19,4 +18,4 @@ def youtube(request):
             print(f"Video Title: {info_dict['title']}")
         except Exception as e:
             print(f"Error: {e}")
-    return render(request, "youtube_downloads.html")
+    return render(request, "yindex.html")
